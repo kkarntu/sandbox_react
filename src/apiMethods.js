@@ -6,10 +6,14 @@ import "./styles.css";
 
 function App() {
   const { users, deleteUser, loading } = useUsers();
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState(""); // Фільтр для пошуку
 
-  const filteredUsers = users.filter((user) =>
-    user.first_name.toLowerCase().includes(filter.toLowerCase())
+  // Фільтрація користувачів за first_name та last_name
+  const filteredUsers = users.filter(
+    (user) =>
+      `${user.first_name} ${user.last_name}`
+        .toLowerCase()
+        .includes(filter.toLowerCase()) // Перевіряємо наявність фільтра в ім'ї або прізвищі
   );
 
   return (

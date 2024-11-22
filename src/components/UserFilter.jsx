@@ -4,7 +4,7 @@ const UserFilter = ({ filter, onChange }) => {
   return (
     <input
       type="text"
-      placeholder="Filter by name"
+      placeholder="Search by name or surname"
       value={filter}
       onChange={(e) => onChange(e.target.value)}
     />
